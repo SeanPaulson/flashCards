@@ -24,6 +24,7 @@ export default function NewQuizForm() {
 
     const cardIds = [];
     const id = uuidv4();
+    console.log(id + 'id')
 
     // create the new cards here and add each card's id to cardIds
     // create the new quiz here
@@ -69,7 +70,7 @@ export default function NewQuizForm() {
           placeholder="Topic"
         >
           <option value="">Topic</option>
-          {Object.values(topics).map((topic) => (
+          {Object.values(topics.topics).map((topic) => (
             <option key={topic.id} value={topic.id}>
               {topic.name}
             </option>
