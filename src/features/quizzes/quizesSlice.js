@@ -17,13 +17,13 @@ export const quizesSlice = createSlice({
     },
     reducers: {
         addQuize: (state, action) => {
-            state.quizes = action.payload;
+            state.quizes[action.payload.id] = action.payload;
         }
     }
 });
 
 
-export const selectQuizes = (state) => state.quizes;
+export const selectQuizes = (state) => state.quizes.quizes;
 
 export const addQuize = quizesSlice.actions.addQuize;
 

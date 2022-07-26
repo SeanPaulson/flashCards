@@ -5,11 +5,12 @@ import { selectQuizes } from "./quizesSlice";
 
 export default function Quizzes() {
   const quizzes = useSelector(selectQuizes); // replace this with a call to your selector to get all the quizzes in state
+  console.log(quizzes)
   return (
     <section className="center">
       <h1>Quizzes</h1>
       <ul className="quizzes-list">
-        {Object.values(quizzes.quizzes).map((quiz) => (
+        {Object.values(quizzes).map((quiz) => (
           <Link key={quiz.id} to={ROUTES.quizRoute(quiz.id)}>
             <li className="quiz">{quiz.name}</li>
           </Link>
